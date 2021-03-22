@@ -1,7 +1,7 @@
 (() => {
     const t = document.createElement("audio");
     t.style.display = "none", t.src = "https://bad-apple.pages.dev/output.mp3", t.volume = .4, document.body.append(t), t.addEventListener("canplay", () => {
-        t.pause(), fetch("https://bad-apple.pages.dev/output.srt").then(t => t.text()).then(e => {
+        t.pause(), fetch("https://cors-anywhere.herokuapp.com/https://bad-apple.pages.dev/output.srt").then(t => t.text()).then(e => {
             let n = e.split(/^\n$/gm),
                 o = Array.from(document.querySelectorAll(".markup-2BOw-j.messageContent-2qWWxC")).filter(t => "START" === t.textContent);
             if (!o || 0 === o.length) return console.warn("MESSAGE NOT FOUND");
